@@ -37,7 +37,7 @@ void print_str(char *str, int *counter)
  */
 void print_r_str(char *str, int *counter)
 {
-	int len = 0;
+	int len;
 
 	if (str == NULL)
 	{
@@ -45,11 +45,12 @@ void print_r_str(char *str, int *counter)
 		return;
 	}
 
-	while (*str)
+	for (len = 0; *str; str++)
 		len++;
-/*	for (len - 1; len > 0; len--)
-		_putchar(str[len], counter);
-*/
+
+	for (; len > 0; len--)
+		_putchar(str[len-1], counter);
+	
 
 }
 

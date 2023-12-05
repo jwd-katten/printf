@@ -22,5 +22,7 @@ void print_binary(unsigned int n, int *counter);
 int _format(const char *format, va_list args, int *counter);
 int _printf(const char *format, ...);
 
+void print_r_str(char *str, int *counter);
+
 #endif
 

@@ -28,6 +28,8 @@ int _format(const char *format, va_list args, int *counter)
 				print_hexl(va_arg(args, unsigned int), counter);
 			else if (*(format + 1) == 'X')
 				print_hexu(va_arg(args, unsigned int), counter);
+			else if (*(format + 1) == 'r')
+				print_r_str(va_arg(args, char *), counter);
 			else
 				_unsupported(*(format + 1), counter);
 
