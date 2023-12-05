@@ -1,30 +1,49 @@
 #include "main.h"
 
-
 /**
- * _printf - Custom printf function
- * @format: The format string
+ * _printf - prints anything
+ * @format: the format string
  *
- * Return: The number of characters printed (excluding the null byte),
- * or -1 on error
+ * Return: number of bytes printed
  */
 int _printf(const char *format, ...)
 {
-	int counter = 0; /* Initialize the character counter */
-	va_list args;       /* Declare the variable arguments */
+	int sum = 0;
+	va_list ap;
+	char *p, *start;
+	params_t params = PARAMS_INIT;
 
-	va_start(args, format); /* Start processing arguments */
+	va_start(ap, format);
 
-	if (_format(format, args, &counter) == -1)
-	{
-		va_end(args); /* on error end */
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = (char *)format; *p; p++)
+	{
+		init_params(&params, ap);
+		if (*p != '%')
+		{
+			sum += _putchar(*p);
+			continue;
+		}
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char at p is flag char */
+		{
+			p++; /* next char */
+		}
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p,
+				params.l_modifier || params.h_modifier ? p - 1 : 0);
+		else
+			sum += get_print_func(p, ap, &params);
 	}
-	va_end(args); /* End processing */
-
-	return (counter); /* Return the total number of characters printed */
+	_putchar(BUFF_FLUSH);
+	va_end(ap);
+	return (sum);
 }
-
-
-
-
