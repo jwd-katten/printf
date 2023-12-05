@@ -56,5 +56,3 @@ void _unsupported(char c, int *counter)
 	_putchar('%', counter);
 	_putchar(c, counter);
 }
-
-
