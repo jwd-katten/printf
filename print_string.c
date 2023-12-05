@@ -47,9 +47,9 @@ void print_r_str(char *str, int *counter)
 
 	while (*str)
 		len++;
-	for (len - 1; len > 0; len--)
+/*	for (len - 1; len > 0; len--)
 		_putchar(str[len], counter);
-
+*/
 
 }
 
