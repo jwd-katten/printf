@@ -24,6 +24,8 @@ int _format(const char *format, va_list args, int *counter)
 				print_u_int(va_arg(args, unsigned int), counter);
 			else if (*(format + 1) == 'b')
 				print_binary(va_arg(args, unsigned int), counter);
+			else if (*(format + 1) == 'o')
+				print_binary(va_arg(args, unsigned int), counter);
 			else if (*(format + 1) == 'x')
 				print_hexl(va_arg(args, unsigned int), counter);
 			else if (*(format + 1) == 'X')

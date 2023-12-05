@@ -48,8 +48,8 @@ void print_r_str(char *str, int *counter)
 	for (len = 0; *str; str++)
 		len++;
 
-	for (; len > 0; len--)
-		_putchar(str[len-1], counter);
+	for (; len >= 0; len--, str--)
+		_putchar(*str, counter);
 	
 
 }
