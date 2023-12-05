@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_int_recursive - Helper function to print integer recursively
+ * print_int_recursive - function to print integer recursively
  * @n: The integer to print
  * @counter: Pointer to the character count
  */
@@ -19,7 +19,7 @@ void print_int_recursive(unsigned int n, int *counter)
 /**
  * print_int - Print a non-negative integer to standard output
  * @n: The integer to print
- * @counter: Pointer to the character count
+ * @counter: Pointer to the char count
  */
 void print_int(int n, int *counter)
 {
