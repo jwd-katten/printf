@@ -39,16 +39,16 @@ void print_r_str(char *str, int *counter)
 {
 	int len = 0;
 
-        if (str == NULL)
-        {
-                print_str("(null)", counter);
-                return;
-        }
+	if (str == NULL)
+	{
+		print_str("(null)", counter);
+		return;
+	}
 
 	while (*str)
 		len++;
 	for (len - 1; len > 0; len--)
-                _putchar(str[len], counter);
+		_putchar(str[len], counter);
 
 
 }

@@ -30,7 +30,6 @@ int _format(const char *format, va_list args, int *counter)
 				print_hexu(va_arg(args, unsigned int), counter);
 			else
 				_unsupported(*(format + 1), counter);
-				//_putchar(*(format+1), counter);
 
 			if (*counter == -1)  /* Check for error in printing _putchar */
 				return (-1);
