@@ -29,3 +29,27 @@ void print_str(char *str, int *counter)
 	while (*str)
 		_putchar(*str++, counter);
 }
+
+/**
+ * print_r_str - Print reverse string to standard output
+ * @str: The string to print
+ * @counter: Pointer to the character count
+ */
+void print_r_str(char *str, int *counter)
+{
+	int len = 0;
+
+        if (str == NULL)
+        {
+                print_str("(null)", counter);
+                return;
+        }
+
+	while (*str)
+		len++;
+	for (len - 1; len > 0; len--)
+                _putchar(str[len], counter);
+
+
+}
+

@@ -10,17 +10,17 @@
  */
 int _printf(const char *format, ...)
 {
-	int counter = 0; /* Initialize the character count */
-	va_list args;       /* Declare a variable the variable arguments */
+	int counter = 0; /* Initialize the character counter */
+	va_list args;       /* Declare the variable arguments */
 
-	va_start(args, format); /* Start processing the variable arguments */
+	va_start(args, format); /* Start processing arguments */
 
 	if (_format(format, args, &counter) == -1)
 	{
-		va_end(args); /* End processing the variable arguments on error */
+		va_end(args); /* on error end */
 		return (-1);
 	}
-	va_end(args); /* End processing the variable arguments */
+	va_end(args); /* End processing */
 
 	return (counter); /* Return the total number of characters printed */
 }
