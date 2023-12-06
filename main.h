@@ -24,4 +24,4 @@ int _printf(const char *format, ...);
 
 void print_r_str(char *str, int *counter);
 
-#endi
+#endif
